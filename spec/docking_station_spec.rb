@@ -15,4 +15,18 @@ describe DockingStation do
       expect(subject.bike).to eql(a_bike)
     end
   end
+
+  describe "#raise_error" do
+
+    it { expect { subject.release_bike }.to raise_error 'No bikes available'}
+  end
+
+  describe '#release_bike' do
+    it 'releases the same docked bike' do
+      bike = Bike.new
+      subject.dock_bike(bike)
+      expect(subject.release_bike).to eq bike
+    end
+  end
+
 end
