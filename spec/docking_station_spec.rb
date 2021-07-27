@@ -22,8 +22,7 @@ describe DockingStation do
     end
   end
 
-  describe "#raise_error" do
-
+  describe "raise_error" do
     it { expect { subject.release_bike }.to raise_error 'No bikes available'}
   end
 
@@ -34,5 +33,4 @@ describe DockingStation do
       expect(subject.release_bike).to eq bike
     end
   end
-
 end
